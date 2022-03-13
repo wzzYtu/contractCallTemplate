@@ -1,0 +1,17 @@
+#版本号
+Version="1.0"
+
+#用户信息
+[User]
+Name="test1"
+Age=18
+IsVip=true
+
+#组信息
+[[Group]]
+ID=1001
+Name="group1"
+
+[[Group]]
+ID=1002
+Name="group2"
