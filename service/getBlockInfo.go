@@ -12,7 +12,7 @@ import (
 )
 
 func GetBlockInfoByNum(blockNumber *big.Int) *types.Block {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 	block, err := client.BlockByNumber(context.Background(), blockNumber)
 	if err != nil {
 		log.Fatal(err)
@@ -21,7 +21,7 @@ func GetBlockInfoByNum(blockNumber *big.Int) *types.Block {
 }
 
 func GetLastBlockInfo() {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 	header, err := client.HeaderByNumber(context.Background(), nil)
 	if err != nil {
 		log.Fatal(err)
@@ -31,7 +31,7 @@ func GetLastBlockInfo() {
 }
 
 func GetBlockByHash(blockHash string) *types.Block {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 	bHash := common.HexToHash(blockHash)
 	block, err := client.BlockByHash(context.Background(), bHash)
 	if err != nil {

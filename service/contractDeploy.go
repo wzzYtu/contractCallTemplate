@@ -18,8 +18,8 @@ type DeployFunc func(*bind.TransactOpts, bind.ContractBackend, ...interface{}) (
 // @param
 func DeployContract(deployFunc DeployFunc, initPara ...interface{}) common.Address {
 	var (
-		client = init.NewClient(conf.Conf.Chain.ChainURL)
-		auth   = init.InitAuth(init.ChainID(conf.Conf.Chain.ChainID))
+		client = initialize.NewClient(conf.Conf.Chain.ChainURL)
+		auth   = initialize.InitAuth(initialize.ChainID(conf.Conf.Chain.ChainID))
 	)
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
@@ -29,7 +29,7 @@ func DeployContract(deployFunc DeployFunc, initPara ...interface{}) common.Addre
 	auth.GasPrice, _ = new(big.Int).SetString(gasPriceStr, 10)
 	contractAddr, _, _, err := deployFunc(auth, client, initPara)
 	if err != nil {
-		init.ExitWithErr(err)
+		initialize.ExitWithErr(err)
 	}
 	fmt.Println("------ Contract Address ------")
 	fmt.Println("contractAddr", contractAddr)

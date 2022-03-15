@@ -1,4 +1,4 @@
-package init
+package initialize
 
 import (
 	"context"
@@ -17,7 +17,7 @@ import (
 type ChainID uint64
 
 var (
-	privStr        = conf.Conf.Wallet.PrivStr
+	privStr        = conf.Conf.Wallet.PrivStrOfDeploy
 	PlatON_Dev_Url = conf.Conf.Chain.ChainURL
 	chainID        = ChainID(conf.Conf.Chain.ChainID)
 )

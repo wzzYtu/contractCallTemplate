@@ -1,9 +1,11 @@
 [chain]
     chainURL="http://35.247.155.162:6789"
     chainID=210309
+    chainWss=""
 
 [wallet]
-    privStr="c12581299d9cc80093c0242670be2ebfd4a2d86bbaace31e15b5d7c82331283e"
+    privStrOfDeploy="c000e160b21c56ad82909aef7953dc91ecaeb712149bf1060d8813219f758c8a"
+    privStrOfSend="c000e160b21c56ad82909aef7953dc91ecaeb712149bf1060d8813219f758c8a"
 
 [contract]
     address="0x50fcf666a7ebd5764f19a8c89bf5013084081511"

@@ -9,10 +9,12 @@ type Conf struct {
 type Chain struct {
 	ChainURL string `toml:"chainURL"`
 	ChainID  int    `toml:"chainID"`
+	ChainWss string `toml:"chainWss"`
 }
 
 type Wallet struct {
-	PrivStr string `toml:"privStr"`
+	PrivStrOfDeploy string `toml:"privStrOfDeploy"`
+	PrivStrOfSend   string `toml:"privStrOfSend"`
 }
 
 type Contract struct {

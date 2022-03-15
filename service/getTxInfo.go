@@ -29,7 +29,7 @@ func rangeBlock(block *types.Block) types.Transactions {
 }
 
 func GetTxByTxHash(txHash string) (bool, *types.Transaction) {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 	Hash := common.HexToHash(txHash)
 	tx, isPending, err := client.TransactionByHash(context.Background(), Hash)
 	if err != nil {

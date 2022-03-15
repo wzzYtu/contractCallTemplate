@@ -13,7 +13,7 @@ import (
 
 // GetBalance 得到地址address中ETH余额
 func GetBalance(address string) *big.Float {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 
 	account := common.HexToAddress(address)
 	balance, err := client.BalanceAt(context.Background(), account, nil)
@@ -25,7 +25,7 @@ func GetBalance(address string) *big.Float {
 
 // GetBalanceOfBlockNumber 得到指定区块高度下地址address中ETH余额
 func GetBalanceOfBlockNumber(address string, blockNumber int64) *big.Float {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 
 	blockNum := big.NewInt(blockNumber)
 	account := common.HexToAddress(address)
@@ -38,7 +38,7 @@ func GetBalanceOfBlockNumber(address string, blockNumber int64) *big.Float {
 
 // GetBalanceOfPending 得到待处理的账户余额
 func GetBalanceOfPending(address string) *big.Float {
-	var client = init.NewClient(conf.Conf.Chain.ChainURL)
+	var client = initialize.NewClient(conf.Conf.Chain.ChainURL)
 	account := common.HexToAddress(address)
 	balance, err := client.PendingBalanceAt(context.Background(), account)
 	if err != nil {
